@@ -20,8 +20,8 @@ namespace CSharpGoogleSelenium
     {
         // Skapa en variabel som hållerwebdriver
         static IWebDriver driver;
-        // Wait map
-        //static IWait<IWebDriver> wait;
+        //Wait map
+        static IWait<IWebDriver> wait;
 
         static void Main(string[] args)
         {
@@ -30,13 +30,14 @@ namespace CSharpGoogleSelenium
             // Öppna google
             driver.Url = "http://www.google.com";
             // Ställa in webdrivewait med driver den ska använda och antalet sekunder den ska vänta
-            //wait = new WebDriverWait(driver, 3);
-            Thread.Sleep(2000);
+            wait = new WebDriverWait(driver, new TimeSpan(0,0,2));
+            //Thread.Sleep(2000);
             // Hitta sök fältet och skriv in "Testautomatisering Stockholm"
             driver.FindElement(By.Id("lst-ib")).SendKeys("Testautomatisering Stockholm");
             // Hitta sök knappen, klicka på den
             driver.FindElement(By.Id("_fZl")).Click();
             // Vänta tills dess att elementet är synligt
+            //IWebElement results = wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.Id("resultStats")));
             Thread.Sleep(2000);
             IWebElement results = driver.FindElement(By.Id("resultStats"));
             // Ta fram resultatstats och skriv ut

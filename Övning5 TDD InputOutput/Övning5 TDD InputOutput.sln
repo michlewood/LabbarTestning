@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Övning5", "Övning5\Övning5.csproj", "{32745947-29BE-4B21-AC42-2271010B5DEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit_Tester", "NUnit_Tester\NUnit_Tester.csproj", "{02B927BD-EA85-4619-87E6-F22BD854B651}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileHandler", "FileHandler\FileHandler.csproj", "{9E987AE7-8830-4D43-BBA0-8DAA32DCC452}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32745947-29BE-4B21-AC42-2271010B5DEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32745947-29BE-4B21-AC42-2271010B5DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32745947-29BE-4B21-AC42-2271010B5DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32745947-29BE-4B21-AC42-2271010B5DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02B927BD-EA85-4619-87E6-F22BD854B651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02B927BD-EA85-4619-87E6-F22BD854B651}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02B927BD-EA85-4619-87E6-F22BD854B651}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02B927BD-EA85-4619-87E6-F22BD854B651}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E987AE7-8830-4D43-BBA0-8DAA32DCC452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E987AE7-8830-4D43-BBA0-8DAA32DCC452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E987AE7-8830-4D43-BBA0-8DAA32DCC452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E987AE7-8830-4D43-BBA0-8DAA32DCC452}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

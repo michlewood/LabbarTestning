@@ -45,8 +45,21 @@ namespace Övning5
             var content = class1.GetFileContent();
             Console.WriteLine(content[0]);
             Graphics.MenuGraphics();
-
+            Printer();
             MenuControls();
+        }
+
+        private void Printer()
+        {
+            var content = class1.GetFileContent();
+            int location = 1;
+            for (int i = 0; i < content.Length; i++)
+            {
+                Console.SetCursorPosition(40, location);
+                location++;
+                Console.WriteLine(content[i]);
+            }
+            Console.SetCursorPosition(0, 0);
         }
 
         private void MenuControls()

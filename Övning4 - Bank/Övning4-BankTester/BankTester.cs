@@ -100,18 +100,17 @@ namespace Övning4_BankTester
         }
     }
 
-        [TestFixture]
-        public class BalanceTester_NUnit
+    [TestFixture]
+    public class BalanceTester_NUnit
     {
-        
-            [Test]
-            public void BalanceTest()
-            {
-                int expectedOutput = 500;
-                Account account = new Account();
-                int actualOutput = account.Balance();
+        [Test]
+        public void BalanceTest()
+        {
+            int expectedOutput = 500;
+            Account account = new Account();
+            int actualOutput = account.Balance();
 
-                Assert.AreEqual(expectedOutput, actualOutput);
-            }
+            Assert.AreEqual(expectedOutput, actualOutput);
         }
     }
+}

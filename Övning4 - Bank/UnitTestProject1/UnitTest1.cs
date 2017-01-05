@@ -18,6 +18,7 @@ namespace UnitTestProject1
 
             Assert.AreEqual(expectedOutput, account.AccountBalance);
         }
+
         [TestMethod]
         public void DepitTester_Removing_700_From_500_And_Expecting_No_Change()
         {
@@ -56,7 +57,6 @@ namespace UnitTestProject1
             account.Credit(amountToAdd);
 
             Assert.AreEqual(expectedOutput, account.AccountBalance);
-
         }
 
         [TestMethod]

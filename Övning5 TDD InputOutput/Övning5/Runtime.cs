@@ -37,29 +37,14 @@ namespace Övning5
             Subtractor();
             Multiplicator();
             Divisor();
-            Printor();
         }
 
         private void Menu()
         {
-            var content = class1.GetFileContent();
-            Console.WriteLine(content[0]);
+            Printor();
+            Console.WriteLine("---------");
             Graphics.MenuGraphics();
-            Printer();
             MenuControls();
-        }
-
-        private void Printer()
-        {
-            var content = class1.GetFileContent();
-            int location = 1;
-            for (int i = 0; i < content.Length; i++)
-            {
-                Console.SetCursorPosition(40, location);
-                location++;
-                Console.WriteLine(content[i]);
-            }
-            Console.SetCursorPosition(0, 0);
         }
 
         private void MenuControls()
@@ -69,12 +54,12 @@ namespace Övning5
             {
                 case ConsoleKey.UpArrow:
                     itemSelected--;
-                    if (itemSelected == -1) itemSelected = 6;
+                    if (itemSelected == -1) itemSelected = 5;
                     break;
 
                 case ConsoleKey.DownArrow:
                     itemSelected++;
-                    if (itemSelected > 6) itemSelected = 0;
+                    if (itemSelected > 5) itemSelected = 0;
                     break;
                 case ConsoleKey.Enter:
                     Console.Clear();
@@ -101,18 +86,11 @@ namespace Övning5
                     }
                     if (itemSelected == 5)
                     {
-                        Printor();
-                    }
-                    if (itemSelected == 6)
-                    {
                         Environment.Exit(0);
                     }
                     Console.CursorVisible = false;
                     var content = class1.GetFileContent();
-                    if (itemSelected != 5)
-                    {
-                        Console.WriteLine(content[itemSelected]); 
-                    }
+                    Console.WriteLine(content[itemSelected]);
                     Console.ReadKey(true);
                     break;
             }

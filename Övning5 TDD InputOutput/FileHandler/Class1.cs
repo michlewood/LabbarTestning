@@ -12,16 +12,11 @@ namespace FileHandler
         private string file = String.Format("{0}{1}", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"\övning5.txt");
         public Class1()
         {
-            if (!CheckIfFileExist())
+            if (!File.Exists(file))
             {
                 string[] content = { "Name:", "Addition:", "Subtraction:", "Multiplication:", "Division:" };
                 File.WriteAllLines(file, content);
             }
-        }
-
-        public bool CheckIfFileExist()
-        {
-            return File.Exists(file);
         }
 
         public void Name(string firstName, string lastName)
@@ -40,7 +35,9 @@ namespace FileHandler
 
         public void Addition(int firstNumber, int secondNumber)
         {
-            // WriteToFile(Addition: 3 + 6 = 9, 1);
+            // File.WriteAllText(file, "Addition: 3 + 6 = 9, 1");
+
+            // WriteToFile(Addition: 3 + 6 = 9);
 
             // WriteToFile(string.Format("Addition: {0} + {1} = {2}", firstNumber, secondNumber, firstNumber + secondNumber), 1);
 
@@ -52,6 +49,8 @@ namespace FileHandler
 
         public void Subtraction(int firstNumber, int secondNumber)
         {
+            // WriteToFile(Subtraction: 8 - 3 = 5);
+
             // WriteToFile(string.Format("Subtraction: {0} - {1} = {2}", firstNumber, secondNumber, firstNumber - secondNumber), 2);
 
             if (firstNumber >= 0 && secondNumber >= 0)
@@ -70,7 +69,7 @@ namespace FileHandler
             }
         }     
 
-        public void Division(int firstNumber, int secondNumber)
+        public void Division(double firstNumber, double secondNumber)
         {
             //WriteToFile(string.Format("Division: {0} / {1} = {2}", firstNumber, secondNumber, firstNumber / secondNumber), 4);
 

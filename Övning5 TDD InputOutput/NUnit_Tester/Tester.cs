@@ -9,7 +9,7 @@ using FileHandler;
 namespace NUnit_Tester
 {
     [TestFixture]
-    public class Tester
+    public class FileTests
     {
         private string file = string.Format("{0}{1}", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"\övning5.txt");
 
@@ -19,6 +19,12 @@ namespace NUnit_Tester
             Class1 class1 = new Class1();
             Assert.AreEqual(true, File.Exists(file));
         }
+    }
+
+    [TestFixture]
+    class NameTests
+    {
+        private string file = string.Format("{0}{1}", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"\övning5.txt");
 
         [Test]
         public void Names_Exist_In_File_After_They_Are_Inputed()
@@ -33,6 +39,12 @@ namespace NUnit_Tester
 
             Assert.AreEqual(true, content.Contains(fullname));
         }
+    }
+
+    [TestFixture]
+    class AdditionTests
+    {
+        private string file = string.Format("{0}{1}", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"\övning5.txt");
 
         [Test]
         public void Addition_Gets_Added_To_The_Text_File()
@@ -55,7 +67,7 @@ namespace NUnit_Tester
             Class1 class1 = new Class1();
             int firstNumber = 3;
             int secondNumber = -6;
-            
+
             string contentBefore = File.ReadAllText(file);
 
             class1.Addition(firstNumber, secondNumber);
@@ -64,13 +76,19 @@ namespace NUnit_Tester
 
             Assert.AreEqual(contentBefore, contentAfter);
         }
+    }
+
+    [TestFixture]
+    class SubtractionTests
+    {
+        private string file = string.Format("{0}{1}", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"\övning5.txt");
 
         [Test]
         public void Subtraction_Gets_Added_To_The_Text_File()
         {
             Class1 class1 = new Class1();
-            int firstNumber = 8;
-            int secondNumber = 3;
+            int firstNumber = 9;
+            int secondNumber = 7;
             string expectedResult = string.Format("Subtraction: {0} - {1} = {2}", firstNumber, secondNumber, firstNumber - secondNumber);
 
             class1.Subtraction(firstNumber, secondNumber);
@@ -95,6 +113,12 @@ namespace NUnit_Tester
 
             Assert.AreEqual(contentBefore, contentAfter);
         }
+    }
+
+    [TestFixture]
+    class MultiplicationTests
+    {
+        private string file = string.Format("{0}{1}", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"\övning5.txt");
 
         [Test]
         public void Multiplication_Gets_Added_To_The_Text_File()
@@ -126,6 +150,12 @@ namespace NUnit_Tester
 
             Assert.AreEqual(contentBefore, contentAfter);
         }
+    }
+
+    [TestFixture]
+    class DivisionTests
+    {
+        private string file = string.Format("{0}{1}", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"\övning5.txt");
 
         [Test]
         public void Division_Gets_Added_To_The_Text_File()

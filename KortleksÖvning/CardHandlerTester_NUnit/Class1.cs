@@ -9,14 +9,14 @@ using CardHandlerlib;
 namespace CardHandlerTester_NUnit
 {
     [TestFixture]
-    public class SuitChecker
+    public class SuitCheckerTester
     {
 
         [Test]
-        public void Test_If_Input_Is_d_Returns_Diamond()
+        public void Test_If_Input_Is_d_Returns_Diamonds()
         {
             var input = 'd';
-            var expectedOutput = "Diamond";
+            var expectedOutput = "Diamonds";
             CardHandler class1 = new CardHandler();
             var actualOutput = class1.SuitChecker(input);
             Assert.AreEqual(expectedOutput, actualOutput);
@@ -26,7 +26,7 @@ namespace CardHandlerTester_NUnit
         public void Test_If_Input_Is_c_Returns_Club()
         {
             var input = 'c';
-            var expectedOutput = "Club";
+            var expectedOutput = "Clubs";
             CardHandler class1 = new CardHandler();
             var actualOutput = class1.SuitChecker(input);
             Assert.AreEqual(expectedOutput, actualOutput);
@@ -44,10 +44,10 @@ namespace CardHandlerTester_NUnit
         }
 
         [Test]
-        public void Test_If_Input_C_Returns_Club()
+        public void Test_If_Input_C_Returns_Clubs()
         {
             var input = 'C';
-            var expectedOutput = "Club";
+            var expectedOutput = "Clubs";
             CardHandler class1 = new CardHandler();
             var actualOutput = class1.SuitChecker(input);
             Assert.AreEqual(expectedOutput, actualOutput);
@@ -55,7 +55,7 @@ namespace CardHandlerTester_NUnit
     }
 
     [TestFixture]
-    public class CheckValues
+    public class CheckValuesTester
     {
         [Test]
         public void Test_If_Input_Is_2_Returns_2()
@@ -115,6 +115,50 @@ namespace CardHandlerTester_NUnit
             CardHandler class1 = new CardHandler();
             var actualOutput = class1.ValuesChecker(input);
             Assert.AreEqual(expectedOutput, actualOutput);
+        }
+    }
+
+    [TestFixture]
+    public class CardCheckerTester
+    {
+        [Test]
+        public void Test_If_Input_2d_Returns_2_of_Diamonds()
+        {
+            var input = "2d";
+            var expectedOutput = "2 of Diamonds";
+            CardHandler class1 = new CardHandler();
+            var actualOutput = class1.CardChecker(input);
+            Assert.AreEqual(expectedOutput, actualOutput);
+        }
+
+        [Test]
+        public void Test_If_Input_10d_Returns_10_of_Diamonds()
+        {
+            var input = "10d";
+            var expectedOutput = "10 of Diamonds";
+            CardHandler class1 = new CardHandler();
+            var actualOutput = class1.CardChecker(input);
+            Assert.AreEqual(expectedOutput, actualOutput);
+        }
+
+        [Test]
+        public void Test_If_Input_10ddd_Returns_Invalid_input()
+        {
+            var input = "10ddd";
+            var expectedOutput = "Invalid input";
+            CardHandler class1 = new CardHandler();
+            var actualOutput = class1.CardChecker(input);
+            Assert.AreEqual(expectedOutput, actualOutput);
+        }
+
+        [Test]
+        public void Test_If_Input_1dd_Returns_Invalid_input()
+        {
+            var input = "1dd";
+            var expectedOutput = "1 Of Diamonds";
+            CardHandler class1 = new CardHandler();
+            var actualOutput = class1.CardChecker(input);
+            Assert.AreNotEqual(expectedOutput, actualOutput);
         }
     }
 }

@@ -8,6 +8,55 @@ namespace CardHandlerlib
 {
     public class CardHandler
     {
+        public string CardChecker(string input)
+        {
+            //return "2 of Diamonds";
+
+            //string output = "";
+
+            //output = ValuesChecker(input);
+            //output += " of ";
+            //output += SuitChecker(input[1]);
+
+            //return output;
+
+            //string output = "";
+
+            //output = ValuesChecker(input);
+            //output += " of ";
+            //output += SuitChecker(input[input.Length-1]);
+
+            //return output;
+
+            //if (input.Length < 4)
+            //{
+            //    string output = "";
+
+            //    output = ValuesChecker(input);
+            //    output += " of ";
+            //    output += SuitChecker(input[input.Length - 1]);
+
+            //    return output;
+            //}
+            //else return "Invalid input";
+
+            if (input.Length == 2 || input.Length == 3)
+            {
+                string value = input.Substring(0, input.Length - 1);
+                char suit = input.Last();
+
+                string output = "";
+
+                output = ValuesChecker(value);
+                output += " of ";
+                output += SuitChecker(suit);
+
+                return output;
+
+            }
+            else return "Invalid input";
+        }
+
         public string SuitChecker(char input)
         {
             //return "Diamond";
@@ -44,13 +93,13 @@ namespace CardHandlerlib
             //else return "Invalid input";
 
             if (input == 'd' || input == 'D')
-                return "Diamond";
+                return "Diamonds";
             else if (input == 'c' || input == 'C')
-                return "Club";
+                return "Clubs";
             else if (input == 'h' || input == 'H')
-                return "Heart";
+                return "Hearts";
             else if (input == 's' || input == 'S')
-                return "Spade";
+                return "Spades";
             else return "Invalid input";
         }
 
@@ -58,31 +107,31 @@ namespace CardHandlerlib
         {
             //return "2";
 
-            if (input.Contains("10"))
+            if (input.Length > 1 && input[0] == '1' && input[1] == '0')
                 return "10";
-            else if (input.Contains("9"))
+            else if (input[0] == '9')
                 return "9";
-            else if (input.Contains("8"))
+            else if (input[0] == '8')
                 return "8";
-            else if (input.Contains("7"))
+            else if (input[0] == '7')
                 return "7";
-            else if (input.Contains("6"))
+            else if (input[0] == '6')
                 return "6";
-            else if (input.Contains("5"))
+            else if (input[0] == '5')
                 return "5";
-            else if (input.Contains("4"))
+            else if (input[0] == '4')
                 return "4";
-            else if (input.Contains("3"))
+            else if (input[0] == '3')
                 return "3";
-            else if (input.Contains("2"))
+            else if (input[0] == '2')
                 return "2";
-            else if (input.Contains("1"))
+            else if (input[0] == '1')
                 return "Ace";
-            else if (input.ToUpper().Contains("J"))
+            else if (input[0] == 'J' || input[0] == 'j')
                 return "Jack";
-            else if (input.ToUpper().Contains("Q"))
+            else if (input[0] == 'Q' || input[0] == 'q')
                 return "Queen";
-            else if (input.ToUpper().Contains("K"))
+            else if (input[0] == 'K' || input[0] == 'k')
                 return "King";
             else return "Invalid value";
         }

@@ -37,10 +37,16 @@ namespace CardHandlerTester_NUnit
         public void Test_If_Input_Is_e_Return_Invalid_input()
         {
             var input = 'e';
-            var expectedOutput = "Invalid input";
             CardHandler class1 = new CardHandler();
-            var actualOutput = class1.SuitChecker(input);
-            Assert.AreEqual(expectedOutput, actualOutput);
+            try
+            {
+                var actualOutput = class1.SuitChecker(input);
+                Assert.Fail();
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("Input is not a valid suit", e.Message);
+            }
         }
 
         [Test]
@@ -111,10 +117,16 @@ namespace CardHandlerTester_NUnit
         public void Test_If_Input_Is_e_Returns_Invalid_value()
         {
             var input = "e";
-            var expectedOutput = "Invalid value";
             CardHandler class1 = new CardHandler();
-            var actualOutput = class1.ValuesChecker(input);
-            Assert.AreEqual(expectedOutput, actualOutput);
+            try
+            {
+                var actualOutput = class1.ValuesChecker(input);
+                Assert.Fail();
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("Input is not a valid value", e.Message);
+            }
         }
     }
 
@@ -145,10 +157,16 @@ namespace CardHandlerTester_NUnit
         public void Test_If_Input_10ddd_Returns_Invalid_input()
         {
             var input = "10ddd";
-            var expectedOutput = "Invalid input";
             CardHandler class1 = new CardHandler();
-            var actualOutput = class1.CardChecker(input);
-            Assert.AreEqual(expectedOutput, actualOutput);
+            try
+            {
+                var actualOutput = class1.CardChecker(input);
+                Assert.Fail();
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("Input is wrong length", e.Message);
+            }
         }
 
         [Test]

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardHandlerlib", "CardHandl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardHandlerTester_NUnit", "CardHandlerTester_NUnit\CardHandlerTester_NUnit.csproj", "{8D15DCBC-221E-44E1-AFE7-BDF3B3CEE015}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardHandler_ModuleTester", "CardHandler_ModuleTester\CardHandler_ModuleTester.csproj", "{B6E5876B-A03C-4239-A773-9115DF8DB00F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8D15DCBC-221E-44E1-AFE7-BDF3B3CEE015}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D15DCBC-221E-44E1-AFE7-BDF3B3CEE015}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D15DCBC-221E-44E1-AFE7-BDF3B3CEE015}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6E5876B-A03C-4239-A773-9115DF8DB00F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6E5876B-A03C-4239-A773-9115DF8DB00F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6E5876B-A03C-4239-A773-9115DF8DB00F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6E5876B-A03C-4239-A773-9115DF8DB00F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

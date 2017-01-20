@@ -54,7 +54,7 @@ namespace CardHandlerlib
                 return output;
 
             }
-            else return "Invalid input";
+            else throw new ArgumentException("Input is wrong length");
         }
 
         public string SuitChecker(char input)
@@ -100,7 +100,7 @@ namespace CardHandlerlib
                 return "Hearts";
             else if (input == 's' || input == 'S')
                 return "Spades";
-            else return "Invalid input";
+            else throw new ArgumentException("Input is not a valid suit");
         }
 
         public string ValuesChecker(string input)
@@ -133,7 +133,7 @@ namespace CardHandlerlib
                 return "Queen";
             else if (input[0] == 'K' || input[0] == 'k')
                 return "King";
-            else return "Invalid value";
+            else throw new ArgumentException("Input is not a valid value");
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Övning5
     {
         public static void MenuGraphics()
         {
-            if (Runtime.itemSelected == 0)
+            if (Runtime.ItemSelected == 0)
             {
                 Console.BackgroundColor = ConsoleColor.White;
                 Console.ForegroundColor = ConsoleColor.Black;
@@ -19,7 +19,7 @@ namespace Övning5
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Gray;
 
-            if (Runtime.itemSelected == 1)
+            if (Runtime.ItemSelected == 1)
             {
                 Console.BackgroundColor = ConsoleColor.White;
                 Console.ForegroundColor = ConsoleColor.Black;
@@ -27,7 +27,7 @@ namespace Övning5
             Console.WriteLine("Addition");
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Gray;
-            if (Runtime.itemSelected == 2)
+            if (Runtime.ItemSelected == 2)
             {
                 Console.BackgroundColor = ConsoleColor.White;
                 Console.ForegroundColor = ConsoleColor.Black;
@@ -35,7 +35,7 @@ namespace Övning5
             Console.WriteLine("Subtraction");
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Gray;
-            if (Runtime.itemSelected == 3)
+            if (Runtime.ItemSelected == 3)
             {
                 Console.BackgroundColor = ConsoleColor.White;
                 Console.ForegroundColor = ConsoleColor.Black;
@@ -43,7 +43,7 @@ namespace Övning5
             Console.WriteLine("Multiplication");
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Gray;
-            if (Runtime.itemSelected == 4)
+            if (Runtime.ItemSelected == 4)
             {
                 Console.BackgroundColor = ConsoleColor.White;
                 Console.ForegroundColor = ConsoleColor.Black;
@@ -51,7 +51,7 @@ namespace Övning5
             Console.WriteLine("Division");
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Gray;
-            if (Runtime.itemSelected == 5)
+            if (Runtime.ItemSelected == 5)
             {
                 Console.BackgroundColor = ConsoleColor.White;
                 Console.ForegroundColor = ConsoleColor.Black;

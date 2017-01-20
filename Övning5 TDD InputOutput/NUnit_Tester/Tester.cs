@@ -9,13 +9,14 @@ using FileHandler;
 namespace NUnit_Tester
 {
     [TestFixture]
-    public class FileTests
+    public class _FileTests
     {
         private string file = string.Format("{0}{1}", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"\övning5.txt");
 
         [Test]
-        public void File_Should_Exists_After_Program_Starts()
+        public void _File_Should_Exists_After_Program_Starts()
         {
+            File.Delete(file);
             Class1 class1 = new Class1();
             Assert.AreEqual(true, File.Exists(file));
         }
@@ -173,19 +174,23 @@ namespace NUnit_Tester
         }
 
         [Test]
-        public void Division_With_Negetive_Numbers_Should_Not_Be_Added_To_File()
+        public void Division_With_Zero_Returns_Error()
         {
             Class1 class1 = new Class1();
             int firstNumber = 8;
-            int secondNumber = -4;
+            int secondNumber = 0;
 
-            string contentBefore = File.ReadAllText(file);
+            //Assert.Throws<ArgumentException>(() => class1.Division(firstNumber, secondNumber));
 
-            class1.Division(firstNumber, secondNumber);
-
-            string contentAfter = File.ReadAllText(file);
-
-            Assert.AreEqual(contentBefore, contentAfter);
+            try
+            {
+                class1.Division(firstNumber, secondNumber);
+                Assert.Fail();
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("Cannot divide by zero", e.Message);
+            }
         }
     }
 }

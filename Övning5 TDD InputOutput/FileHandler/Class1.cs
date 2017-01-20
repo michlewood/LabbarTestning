@@ -73,10 +73,12 @@ namespace FileHandler
         {
             //WriteToFile(string.Format("Division: {0} / {1} = {2}", firstNumber, secondNumber, firstNumber / secondNumber), 4);
 
-            if (firstNumber >= 0 && secondNumber >= 0)
+            if (secondNumber != 0)
             {
                 WriteToFile(string.Format("Division: {0} / {1} = {2}", firstNumber, secondNumber, firstNumber / secondNumber), 4);
             }
+            else
+                throw new ArgumentException("Cannot divide by zero");
         }
 
         public string[] GetFileContent()

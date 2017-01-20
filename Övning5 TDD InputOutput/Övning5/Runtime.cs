@@ -11,7 +11,7 @@ namespace Övning5
     {
         Class1 class1 = new Class1();
         int firstNumber = 0, secondNumber = 0;
-        public static int itemSelected = 0;
+        public static int ItemSelected { get; set; }
         bool enterPressed = true;
         string[] menuItems = { "Change Name", "Addition", "Subtraction", "Multiplication", "Division", "Exit" };
 
@@ -48,21 +48,20 @@ namespace Övning5
             {
                 case ConsoleKey.UpArrow:
                 case ConsoleKey.DownArrow:
-
-                    Console.SetCursorPosition(0, 6 + itemSelected);
+                    Console.SetCursorPosition(0, 6 + ItemSelected);
                     Console.ResetColor();
-                    Console.WriteLine(menuItems[itemSelected]);
+                    Console.WriteLine(menuItems[ItemSelected]);
                     if (controls == ConsoleKey.UpArrow)
                     {
-                        itemSelected--;
-                        if (itemSelected == -1) itemSelected = 5;
+                        ItemSelected--;
+                        if (ItemSelected < 0) ItemSelected = 5;
                     }
                     else
                     {
-                        itemSelected++;
-                        if (itemSelected > 5) itemSelected = 0;
+                        ItemSelected++;
+                        if (ItemSelected > 5) ItemSelected = 0;
                     }
-                    ChangeColorOfNewlySelectedItem(itemSelected);
+                    ChangeColorOfNewlySelectedItem(ItemSelected);
                     break;
 
                 case ConsoleKey.Enter:
@@ -70,22 +69,22 @@ namespace Övning5
                     Console.CursorVisible = true;
                     enterPressed = true;
 
-                    if (itemSelected == 0)
+                    if (ItemSelected == 0)
                         Nameor();
-                    if (itemSelected == 1)
+                    if (ItemSelected == 1)
                         Addor();
-                    if (itemSelected == 2)
+                    if (ItemSelected == 2)
                         Subtractor();
-                    if (itemSelected == 3)
+                    if (ItemSelected == 3)
                         Multiplicator();
-                    if (itemSelected == 4)
+                    if (ItemSelected == 4)
                         Divisor();
-                    if (itemSelected == 5)
+                    if (ItemSelected == 5)
                         Environment.Exit(0);
 
                     Console.CursorVisible = false;
                     var content = class1.GetFileContent();
-                    Console.WriteLine(content[itemSelected]);
+                    Console.WriteLine(content[ItemSelected]);
                     Console.ReadKey(true);
                     Console.Clear();
                     break;
@@ -126,44 +125,44 @@ namespace Övning5
             switch (control)
             {
                 case ConsoleKey.UpArrow:
-                    itemSelected--;
-                    if (itemSelected == -1) itemSelected = 5;
+                    ItemSelected--;
+                    if (ItemSelected == -1) ItemSelected = 5;
                     break;
 
                 case ConsoleKey.DownArrow:
-                    itemSelected++;
-                    if (itemSelected > 5) itemSelected = 0;
+                    ItemSelected++;
+                    if (ItemSelected > 5) ItemSelected = 0;
                     break;
                 case ConsoleKey.Enter:
                     Console.Clear();
                     Console.CursorVisible = true;
-                    if (itemSelected == 0)
+                    if (ItemSelected == 0)
                     {
                         Nameor();
                     }
-                    if (itemSelected == 1)
+                    if (ItemSelected == 1)
                     {
                         Addor();
                     }
-                    if (itemSelected == 2)
+                    if (ItemSelected == 2)
                     {
                         Subtractor();
                     }
-                    if (itemSelected == 3)
+                    if (ItemSelected == 3)
                     {
                         Multiplicator();
                     }
-                    if (itemSelected == 4)
+                    if (ItemSelected == 4)
                     {
                         Divisor();
                     }
-                    if (itemSelected == 5)
+                    if (ItemSelected == 5)
                     {
                         Environment.Exit(0);
                     }
                     Console.CursorVisible = false;
                     var content = class1.GetFileContent();
-                    Console.WriteLine(content[itemSelected]);
+                    Console.WriteLine(content[ItemSelected]);
                     Console.ReadKey(true);
                     break;
             }
@@ -225,38 +224,30 @@ namespace Övning5
         {
             Console.WriteLine(OperatorName);
 
-            bool isValid = false;
+            firstNumber = CheckNumber("Enter first number:");
+            secondNumber = CheckNumber("Enter second number:");
+        }
 
-            while (!isValid || firstNumber == 0)
+        private int CheckNumber(string text)
+        {
+            int number = 0;
+            var isValid = false;
+            while (!isValid)
             {
-                Console.WriteLine("Enter first number:");
-                isValid = int.TryParse(Console.ReadLine(), out firstNumber);
-                if (!isValid)
-                {
-                    Console.WriteLine("Please enter a number");
-                }
-                else if (firstNumber == 0)
-                {
-                    Console.WriteLine("Number cannot be zero");
-                }
-            }
-
-            isValid = false;
-
-            while (!isValid || secondNumber == 0)
-            {
-                Console.WriteLine("Enter second number:");
-                isValid = int.TryParse(Console.ReadLine(), out secondNumber);
+                Console.WriteLine(text);
+                isValid = int.TryParse(Console.ReadLine(), out number);
                 if (!isValid)
                 {
                     Console.WriteLine("Please enter a number");
                 }
 
-                else if (secondNumber == 0)
+                else if (number == 0)
                 {
                     Console.WriteLine("Number cannot be zero");
+                    isValid = false;
                 }
             }
+            return number;
         }
 
         private void Printor()

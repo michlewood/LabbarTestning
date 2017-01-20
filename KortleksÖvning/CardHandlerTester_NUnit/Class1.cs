@@ -84,9 +84,9 @@ namespace CardHandlerTester_NUnit
         }
 
         [Test]
-        public void Test_If_Input_Is_1_Returns_Ace()
+        public void Test_If_Input_Is_A_Returns_Ace()
         {
-            var input = "1";
+            var input = "A";
             var expectedOutput = "Ace";
             CardHandler class1 = new CardHandler();
             var actualOutput = class1.ValuesChecker(input);
@@ -173,10 +173,16 @@ namespace CardHandlerTester_NUnit
         public void Test_If_Input_1dd_Returns_Invalid_input()
         {
             var input = "1dd";
-            var expectedOutput = "1 Of Diamonds";
             CardHandler class1 = new CardHandler();
-            var actualOutput = class1.CardChecker(input);
-            Assert.AreNotEqual(expectedOutput, actualOutput);
+            try
+            {
+                var actualOutput = class1.CardChecker(input);
+                Assert.Fail();
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("Input is not a valid value", e.Message);
+            }
         }
     }
 }

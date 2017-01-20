@@ -107,31 +107,31 @@ namespace CardHandlerlib
         {
             //return "2";
 
-            if (input.Length > 1 && input[0] == '1' && input[1] == '0')
+            if (input == "10")
                 return "10";
-            else if (input[0] == '9')
+            else if (input == "9")
                 return "9";
-            else if (input[0] == '8')
+            else if (input == "8")
                 return "8";
-            else if (input[0] == '7')
+            else if (input == "7")
                 return "7";
-            else if (input[0] == '6')
+            else if (input == "6")
                 return "6";
-            else if (input[0] == '5')
+            else if (input == "5")
                 return "5";
-            else if (input[0] == '4')
+            else if (input == "4")
                 return "4";
-            else if (input[0] == '3')
+            else if (input == "3")
                 return "3";
-            else if (input[0] == '2')
+            else if (input == "2")
                 return "2";
-            else if (input[0] == '1')
+            else if (input == "A" ||input == "a")
                 return "Ace";
-            else if (input[0] == 'J' || input[0] == 'j')
+            else if (input == "J" || input == "j")
                 return "Jack";
-            else if (input[0] == 'Q' || input[0] == 'q')
+            else if (input == "Q" || input == "q")
                 return "Queen";
-            else if (input[0] == 'K' || input[0] == 'k')
+            else if (input == "K" || input == "k")
                 return "King";
             else throw new ArgumentException("Input is not a valid value");
         }
